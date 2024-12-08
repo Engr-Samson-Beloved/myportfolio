@@ -10,7 +10,59 @@ import {
   X
 } from 'lucide-react';
 
-// Import the sections we've already created
+// Animated Background Component
+const AnimatedBackground = () => {
+  const shapes = Array.from({ length: 8 }, (_, i) => ({
+    id: i,
+    size: Math.random() * 100 + 50,
+    delay: Math.random() * 2,
+    duration: Math.random() * 5 + 3,
+    x: Math.random() * 100 - 50,
+    y: Math.random() * 100 - 50,
+    color: getRandomColor()
+  }));
+
+  function getRandomColor() {
+    const colors = [
+      'rgba(126, 34, 206, 0.1)', 
+      'rgba(126, 34, 206, 0.05)', 
+      'rgba(79, 70, 229, 0.1)', 
+      'rgba(55, 48, 163, 0.05)'
+    ];
+    return colors[Math.floor(Math.random() * colors.length)];
+  }
+
+  return (
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+      {shapes.map((shape) => (
+        <motion.div
+          key={shape.id}
+          className="absolute rounded-full blur-2xl opacity-50"
+          style={{
+            width: shape.size,
+            height: shape.size,
+            backgroundColor: shape.color
+          }}
+          animate={{
+            x: [shape.x, -shape.x, shape.x],
+            y: [shape.y, -shape.y, shape.y],
+            scale: [1, 1.2, 1],
+            rotate: [0, 360, 0]
+          }}
+          transition={{
+            duration: shape.duration,
+            repeat: Infinity,
+            repeatType: "reverse",
+            delay: shape.delay,
+            ease: "easeInOut"
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
+// Import the sections
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
@@ -30,22 +82,27 @@ const App = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-white dark:bg-[#121212] text-gray-900 dark:text-white transition-colors duration-300"
+      className="relative min-h-screen bg-white dark:bg-[#121212] text-gray-900 dark:text-white transition-colors duration-300"
     >
-      <Header 
-        darkMode={darkMode} 
-        setDarkMode={setDarkMode}
-        mobileMenuOpen={mobileMenuOpen}
-        setMobileMenuOpen={setMobileMenuOpen}
-      />
-      <main className="pt-16">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
+      {/* Animated Background */}
+      <AnimatedBackground />
+      
+      <div className="relative z-10">
+        <Header 
+          darkMode={darkMode} 
+          setDarkMode={setDarkMode}
+          mobileMenuOpen={mobileMenuOpen}
+          setMobileMenuOpen={setMobileMenuOpen}
+        />
+        <main className="pt-16">
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </motion.div>
   );
 };

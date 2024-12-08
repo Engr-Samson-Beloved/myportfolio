@@ -41,7 +41,7 @@ const Hero = () => {
           >
             Crafting seamless user interfaces with cutting-edge technologies,
             transforming complex design challenges into elegant, performant web
-            experiences. And a "Creative Specialist in Logo Design, Brand Development, Web Development & Media Services | Crafting Unique Visual Identities and Digital Experiences"
+            experiences. Creative Specialist in Logo Design, Brand Development, & Media Services | Crafting Unique Visual Identities and Digital Experiences"
           </motion.p>
 
           <motion.div
@@ -107,14 +107,33 @@ const Hero = () => {
         >
           <div className="relative">
             <motion.div
-              className="w-48 h-48 md:w-64 md:h-64 bg-purple-100 dark:bg-purple-900/30 rounded-full absolute inset-0 -z-10"
-              animate={{ scale: [0.9, 1, 0.9] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute inset-0 bg-purple-100 dark:bg-purple-900/30 rounded-full"
+              animate={{
+                scale: [0.9, 1, 0.9],
+                rotate: [0, 360, -360, 0],
+                borderRadius: ["50%", "40%", "60%", "50%"]
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                repeatType: "loop",
+                ease: "easeInOut"
+              }}
             />
-            <img
-              src="/api/placeholder/400/400"
-              alt="Michael Rodriguez"
-              className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-white dark:border-[#1E1E1E] shadow-lg hover:scale-105 transition-transform duration-300"
+            <motion.img
+              src="/vite.svg"
+              alt="Owooluwa Samson"
+              className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-white dark:border-[#1E1E1E] shadow-lg relative z-10"
+              animate={{
+                scale: [1, 1.05, 1],
+                rotate: [0, 5, -5, 0]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut"
+              }}
             />
           </div>
         </motion.div>
