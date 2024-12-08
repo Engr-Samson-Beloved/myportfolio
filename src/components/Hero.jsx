@@ -121,7 +121,7 @@ const Hero = () => {
               }}
             />
             <motion.img
-              src="/vite.svg"
+              src="/sam.jpg"
               alt="Owooluwa Samson"
               className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-white dark:border-[#1E1E1E] shadow-lg relative z-10"
               animate={{

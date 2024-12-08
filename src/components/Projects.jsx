@@ -8,21 +8,21 @@ const Projects = () => {
   const projects = [
     {
       name: 'AI-Powered Dashboard',
-      description: 'Comprehensive analytics platform with machine learning insights',
+      description: 'AI-powered documentation tool developed for enhanced productivity.',
       technologies: ['React', 'TypeScript', 'GraphQL', 'D3.js'],
       githubLink: '#',
       liveLink: '#',
       category: 'Web App',
-      image: '/api/placeholder/400/300'
+      image: '/'
     },
     {
-      name: 'E-commerce Microservices',
-      description: 'Scalable online marketplace with distributed architecture',
+      name: 'NilesGideon',
+      description: 'nilesgideon.vercel.app',
       technologies: ['Next.js', 'Node.js', 'Docker', 'Kubernetes'],
       githubLink: '#',
       liveLink: '#',
       category: 'Full Stack',
-      image: '/api/placeholder/400/300'
+      image: '/niles.png'
     },
     {
       name: 'Real-time Collaboration Tool',
@@ -32,6 +32,24 @@ const Projects = () => {
       liveLink: '#',
       category: 'Web App',
       image: '/api/placeholder/400/300'
+    },
+    {
+      name: 'Kay Em Visuals',
+      description: 'Collaborative workspace with live editing and communication',
+      technologies: ['React', 'WebSockets', 'Firebase', 'Tailwind'],
+      githubLink: '#',
+      liveLink: '#',
+      category: 'Full Stack',
+      image: '/kay.jpg'
+    },
+    {
+      name: 'Kay Em Visuals',
+      description: 'Collaborative workspace with live editing and communication',
+      technologies: ['React', 'WebSockets', 'Firebase', 'Tailwind'],
+      githubLink: '#',
+      liveLink: '#',
+      category: 'Web App',
+      image: '/kay.jpg'
     }
   ];
 
